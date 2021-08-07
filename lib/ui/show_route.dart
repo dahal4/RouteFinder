@@ -12,7 +12,7 @@ class ShowRoute extends StatefulWidget {
 
 class _ShowRouteState extends State<ShowRoute> {
 
-  var points = <LatLng>[
+  var ltj = <LatLng>[
     LatLng(27.666811, 85.323345),
     LatLng(27.666875, 85.323062),
     LatLng(27.666881, 85.322693),
@@ -27,7 +27,7 @@ class _ShowRouteState extends State<ShowRoute> {
     LatLng(27.672708, 85.313467),
   ];
 
-  var anotherRoute = <LatLng>[
+  var ltmtj = <LatLng>[
     LatLng(27.6670472, 85.3229302),
     LatLng(27.6668858, 85.3227961),
     LatLng(27.6669048, 85.3225976),
@@ -74,7 +74,7 @@ class _ShowRouteState extends State<ShowRoute> {
         actions: [
           BackButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pop(context,true);
             },
           ),
         ],

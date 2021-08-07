@@ -1,34 +1,32 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
 
-class Places {
+class Place {
   final String name;
 
-  const Places({
+  const Place({
     required this.name,
   });
 
-  static Places fromJson(Map<String, dynamic> json) => Places(
+  static Place fromJson(Map<String, dynamic> json) => Place(
     name: json['name'],
   );
 }
 
-class PlacesApi {
+class PlaceApi {
 
-  static Future<List<Places>> getUserSuggestions(String query) async {
-    final String response = await rootBundle.loadString('api/place.json');
+  static Future<List<Place>> getPlaceSuggestions(String query) async {
+    final String response = await rootBundle.loadString('lib/api/place.json');
 
 
-      final List users = json.decode(response);
+      final List places = json.decode(response);
 
-      return Places.map((json) => Places.fromJson(json)).where((Places) {
-        final nameLower = Places.name.toLowerCase();
+      return places.map((json) => Place.fromJson(json)).where((place) {
+        final nameLower = place.name.toLowerCase();
         final queryLower = query.toLowerCase();
 
         return nameLower.contains(queryLower);
       }).toList();
     }
   }
-}
