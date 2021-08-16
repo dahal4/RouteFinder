@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:route_finder_final/path/kot_gongabu.dart';
-import 'package:route_finder_final/ui/show_route.dart';
+import 'package:route_finder_final/ui/lagankhel_jawlakhel.dart';
 
 import 'home.dart';
 final apikey =
@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Route finder',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: Home(),
     );

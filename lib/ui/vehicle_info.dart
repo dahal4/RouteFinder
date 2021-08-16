@@ -1,4 +1,4 @@
-import 'package:route_finder_final/ui/vehicle_route_show.dart';
+import 'package:route_finder_final/ui/chakrapath.dart';
 import 'package:flutter/material.dart';
 
 class VehicleInfo extends StatelessWidget {
@@ -8,6 +8,10 @@ class VehicleInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
       home: Scaffold(
         appBar: AppBar(
           leading: BackButton(onPressed:(){Navigator.pop(context);},),
@@ -20,40 +24,16 @@ class VehicleInfo extends StatelessWidget {
             children: [
                ListTile(
                  leading: Text("1."),
-              trailing: Icon(Icons.directions_transit),
-              title: Text('Nepal Yatayat',style: TextStyle(
-                    fontSize: 22.0),),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VehicleRouteShow()),
-                );
-              },
-            ),
-               ListTile(
-                 leading: Text("2."),
-              trailing: Icon(Icons.directions_transit),
+              trailing: Icon(Icons.directions_transit,color: Colors.green),
               title: Text('Mahanagar Yatayat',style: TextStyle(
                     fontSize: 22.0),),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => VehicleRouteShow()),
-                );
-              },
-            ),   ListTile(
-                 leading: Text("3."),
-              trailing: Icon(Icons.directions_transit),
-              title: Text('Saja Yatayat',style: TextStyle(
-                    fontSize: 22.0),),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VehicleRouteShow()),
+                  MaterialPageRoute(builder: (context) => Chakrapath()),
                 );
               },
             ),
-             
             ],
           ),
         ),

@@ -1,14 +1,15 @@
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:route_finder_final/path/kot_gongabu.dart';
-import 'package:route_finder_final/ui/show_route.dart';
+import 'package:route_finder_final/ui/kalToKot.dart';
+import 'package:route_finder_final/ui/lagankhelGongabu.dart';
+import 'package:route_finder_final/ui/lagankhel_jawlakhel.dart';
 import 'package:route_finder_final/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'api/user_api.dart';
 
-final apikey =
-    'pk.eyJ1IjoibWFuaXNoZGFoYWwiLCJhIjoiY2tpYWJkdDB6MGFqbTJzcnRpMmE4OWFlNiJ9.yW5q2POpsb9rkIZetl1omw';
+final apikey ='pk.eyJ1IjoibWFuaXNoZGFoYWwiLCJhIjoiY2tpYWJkdDB6MGFqbTJzcnRpMmE4OWFlNiJ9.yW5q2POpsb9rkIZetl1omw';
 
 class Home extends StatefulWidget {
   @override
@@ -18,7 +19,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final _startPointController = TextEditingController();
   final _destinationController = TextEditingController();
-
+  String source="";
+  String destination="";
   @override
   Widget build(BuildContext context) {
 
@@ -153,32 +155,42 @@ class _HomeState extends State<Home> {
                   icon: Icon(Icons.search),
                   onPressed: () {
                     if (_startPointController.text == "Lagankhel" &&
-                        _destinationController.text == "Jawlakhel") {
+                        _destinationController.text == "Jawlakhel" || _startPointController.text == "Jawlakhel" &&
+                        _destinationController.text == "Lagankhel") {
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => ShowRoute()),
                       );
                     } else if (_startPointController.text == "Koteshwor" &&
-                        _destinationController.text == "Gongabu") {
+                        _destinationController.text == "Gongabu" || _startPointController.text == "Gongabu" &&
+                        _destinationController.text == "Koteshwor") {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => KotToGong()),
                       );
-                    } else {
-
+                    }else if (_startPointController.text == "Kalanki" &&
+                        _destinationController.text == "Koteshwor" || _startPointController.text == "Koteshwor" &&
+                        _destinationController.text == "Kalanki") {
 
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
-                      ).then((value) => setState(() {
-                        // Navigator.pop(context,true);
+                        MaterialPageRoute(builder: (context) => KalToKot()),
+                      );
+                    } else if (_startPointController.text == "Lagankhel" &&
+                        _destinationController.text == "Gongabu" || _startPointController.text == "Gongabu" &&
+                        _destinationController.text == "Lagankhel") {
 
-                      }));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LagToGong()),
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => _buildPopupDialog(context),
+                      );
 
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => Home()),
-                      // );
                     }
                   },
                 ),
@@ -191,4 +203,26 @@ class _HomeState extends State<Home> {
 
   }
 
+}
+
+
+Widget _buildPopupDialog(BuildContext context) {
+  return  AlertDialog(
+    title: Text('Alert !!!'),
+    content:  Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Please enter valid source and destination"),
+      ],
+    ),
+    actions: <Widget>[
+       TextButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: Text('Close'),
+      ),
+    ],
+  );
 }

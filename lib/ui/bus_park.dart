@@ -60,8 +60,8 @@ class BusPark extends StatelessWidget {
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -86,7 +86,7 @@ class BusPark extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 30.0)),
                                               Text(
-                                                "Koteshwor",
+                                                "Balkhu",
                                                 style: TextStyle(
                                                     fontSize: 23.0,
                                                     fontWeight: FontWeight.bold,
@@ -148,8 +148,8 @@ class BusPark extends StatelessWidget {
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -174,7 +174,7 @@ class BusPark extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 30.0)),
                                               Text(
-                                                "Ratnapark",
+                                                "Kalanki",
                                                 style: TextStyle(
                                                     fontSize: 23.0,
                                                     fontWeight: FontWeight.bold,
@@ -236,8 +236,8 @@ class BusPark extends StatelessWidget {
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -262,7 +262,7 @@ class BusPark extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 30.0)),
                                               Text(
-                                                "Gangabu Buspark",
+                                                "Ratnapark",
                                                 style: TextStyle(
                                                     fontSize: 23.0,
                                                     fontWeight: FontWeight.bold,
@@ -324,8 +324,8 @@ class BusPark extends StatelessWidget {
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -350,7 +350,7 @@ class BusPark extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 30.0)),
                                               Text(
-                                                "Koteshwor",
+                                                "Gongabu",
                                                 style: TextStyle(
                                                     fontSize: 23.0,
                                                     fontWeight: FontWeight.bold,
@@ -412,184 +412,8 @@ class BusPark extends StatelessWidget {
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
-                        iconSize: 30.0,
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return Container(
-                                    color: Colors.white,
-                                    child: Column(
-                                      // mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Card(
-                                          color: Colors.green,
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Padding(
-                                                  padding: EdgeInsets.only(
-                                                      left: 30.0)),
-                                              Text(
-                                                "Ratnapark",
-                                                style: TextStyle(
-                                                    fontSize: 23.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white),
-                                              ),
-                                              CircleAvatar(
-                                                  backgroundColor: Colors.white,
-                                                  foregroundColor: Colors.green,
-                                                  child:
-                                                      Icon(FontAwesomeIcons.car))
-                                            ],
-                                          ),
-                                        ),
-                                        Divider(),
-                                        Center(
-                                            child: Text(
-                                          "Pass By Vehicles",
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color: Colors.green,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        )),
-                                        ListTile(
-                                          leading: Icon(FontAwesomeIcons.bus,
-                                              color: Colors.green),
-                                          title: Text(
-                                            '1. Aanapurna Yatayat',
-                                            style: TextStyle(
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green),
-                                          ),
-                                        ),
-                                        ListTile(
-                                          leading: Icon(FontAwesomeIcons.bus,
-                                              color: Colors.green),
-                                          title: Text(
-                                            '2. Nepal Yatayat',
-                                            style: TextStyle(
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ));
-                              });
-                        },
-                      ),
-                    );
-                  },
-                ),
-                Marker(
-                  width: 80.0,
-                  height: 80.0,
-                  point: points[5],
-                  builder: (ctx) {
-                    return Container(
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
-                        iconSize: 30.0,
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return Container(
-                                    color: Colors.white,
-                                    child: Column(
-                                      // mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Card(
-                                          color: Colors.green,
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Padding(
-                                                  padding: EdgeInsets.only(
-                                                      left: 30.0)),
-                                              Text(
-                                                "Gangabu Buspark",
-                                                style: TextStyle(
-                                                    fontSize: 23.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white),
-                                              ),
-                                              CircleAvatar(
-                                                  backgroundColor: Colors.white,
-                                                  foregroundColor: Colors.green,
-                                                  child:
-                                                      Icon(FontAwesomeIcons.car))
-                                            ],
-                                          ),
-                                        ),
-                                        Divider(),
-                                        Center(
-                                            child: Text(
-                                          "Pass By Vehicles",
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color: Colors.green,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        )),
-                                        ListTile(
-                                          leading: Icon(FontAwesomeIcons.bus,
-                                              color: Colors.green),
-                                          title: Text(
-                                            '1. Aanapurna Yatayat',
-                                            style: TextStyle(
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green),
-                                          ),
-                                        ),
-                                        ListTile(
-                                          leading: Icon(FontAwesomeIcons.bus,
-                                              color: Colors.green),
-                                          title: Text(
-                                            '2. Nepal Yatayat',
-                                            style: TextStyle(
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ));
-                              });
-                        },
-                      ),
-                    );
-                  },
-                ),
-                Marker(
-                  width: 80.0,
-                  height: 80.0,
-                  point: points[6],
-                  builder: (ctx) {
-                    return Container(
-                      child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -672,12 +496,12 @@ class BusPark extends StatelessWidget {
                 Marker(
                   width: 80.0,
                   height: 80.0,
-                  point: points[7],
+                  point: points[5],
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -702,7 +526,183 @@ class BusPark extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 30.0)),
                                               Text(
-                                                "Ratnapark",
+                                                "Jawlakhel",
+                                                style: TextStyle(
+                                                    fontSize: 23.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.white),
+                                              ),
+                                              CircleAvatar(
+                                                  backgroundColor: Colors.white,
+                                                  foregroundColor: Colors.green,
+                                                  child:
+                                                      Icon(FontAwesomeIcons.car))
+                                            ],
+                                          ),
+                                        ),
+                                        Divider(),
+                                        Center(
+                                            child: Text(
+                                          "Pass By Vehicles",
+                                          style: TextStyle(
+                                            fontSize: 22.0,
+                                            color: Colors.green,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '1. Aanapurna Yatayat',
+                                            style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '2. Nepal Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ));
+                              });
+                        },
+                      ),
+                    );
+                  },
+                ),
+                Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: points[6],
+                  builder: (ctx) {
+                    return Container(
+                      child: IconButton(
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
+                        iconSize: 30.0,
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                    color: Colors.white,
+                                    child: Column(
+                                      // mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Card(
+                                          color: Colors.green,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 30.0)),
+                                              Text(
+                                                "Lagankhel",
+                                                style: TextStyle(
+                                                    fontSize: 23.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.white),
+                                              ),
+                                              CircleAvatar(
+                                                  backgroundColor: Colors.white,
+                                                  foregroundColor: Colors.green,
+                                                  child:
+                                                      Icon(FontAwesomeIcons.car))
+                                            ],
+                                          ),
+                                        ),
+                                        Divider(),
+                                        Center(
+                                            child: Text(
+                                          "Pass By Vehicles",
+                                          style: TextStyle(
+                                            fontSize: 22.0,
+                                            color: Colors.green,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '1. Aanapurna Yatayat',
+                                            style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '2. Nepal Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ));
+                              });
+                        },
+                      ),
+                    );
+                  },
+                ),
+                Marker(
+                  width: 80.0,
+                  height: 80.0,
+                  point: points[7],
+                  builder: (ctx) {
+                    return Container(
+                      child: IconButton(
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
+                        iconSize: 30.0,
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                    color: Colors.white,
+                                    child: Column(
+                                      // mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Card(
+                                          color: Colors.green,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 30.0)),
+                                              Text(
+                                                "Baneshwor",
                                                 style: TextStyle(
                                                     fontSize: 23.0,
                                                     fontWeight: FontWeight.bold,
@@ -764,8 +764,8 @@ class BusPark extends StatelessWidget {
                   builder: (ctx) {
                     return Container(
                       child: IconButton(
-                        icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                        color: Colors.red,
+                        icon: Icon(FontAwesomeIcons.bus),
+                        color: Colors.green,
                         iconSize: 30.0,
                         onPressed: () {
                           showModalBottomSheet(
@@ -790,7 +790,7 @@ class BusPark extends StatelessWidget {
                                                   padding: EdgeInsets.only(
                                                       left: 30.0)),
                                               Text(
-                                                "Gangabu Buspark",
+                                                "Sathdobato",
                                                 style: TextStyle(
                                                     fontSize: 23.0,
                                                     fontWeight: FontWeight.bold,
