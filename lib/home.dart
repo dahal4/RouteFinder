@@ -160,7 +160,7 @@ class _HomeState extends State<Home> {
 
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ShowRoute()),
+                        MaterialPageRoute(builder: (context) => LagJawl()),
                       );
                     } else if (_startPointController.text == "Koteshwor" &&
                         _destinationController.text == "Gongabu" || _startPointController.text == "Gongabu" &&

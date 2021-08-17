@@ -1,19 +1,18 @@
-import 'dart:math';
-
 import 'package:route_finder_final/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:route_finder_final/main.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'dart:math' show cos, sqrt, asin;
 
-class ShowRoute extends StatefulWidget {
+final apikey ='pk.eyJ1IjoibWFuaXNoZGFoYWwiLCJhIjoiY2tpYWJkdDB6MGFqbTJzcnRpMmE4OWFlNiJ9.yW5q2POpsb9rkIZetl1omw';
+
+class LagJawl extends StatefulWidget {
   @override
-  _ShowRouteState createState() => _ShowRouteState();
+  _LagJawlState createState() => _LagJawlState();
 }
 
-class _ShowRouteState extends State<ShowRoute> {
-
+class _LagJawlState extends State<LagJawl> {
   var ltjPath = <LatLng>[
     LatLng(27.666811, 85.323345),
     LatLng(27.666875, 85.323062),
@@ -162,6 +161,8 @@ class _ShowRouteState extends State<ShowRoute> {
     }
     return totalDistance * 1000;
   }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,7 +170,7 @@ class _ShowRouteState extends State<ShowRoute> {
         actions: [
           BackButton(
             onPressed: () {
-              Navigator.pop(context,true);
+              Navigator.pop(context);
             },
           ),
         ],
@@ -183,29 +184,28 @@ class _ShowRouteState extends State<ShowRoute> {
               plugins: [
                 // TappablePolylineMapPlugin(),
               ],
-              center: points[1],
-              zoom: 14.0,
+              center: LatLng(27.667860, 85.315833),
+              zoom: 15,
               maxZoom: 18.0,
             ),
             layers: [
               TileLayerOptions(
                   urlTemplate:
-                      "https://api.mapbox.com/styles/v1/manishdahal/ckjfdjp13n3j81at47rwkya4n/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFuaXNoZGFoYWwiLCJhIjoiY2tpYWJkdDB6MGFqbTJzcnRpMmE4OWFlNiJ9.yW5q2POpsb9rkIZetl1omw",
+                  "https://api.mapbox.com/styles/v1/manishdahal/ckjfdjp13n3j81at47rwkya4n/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFuaXNoZGFoYWwiLCJhIjoiY2tpYWJkdDB6MGFqbTJzcnRpMmE4OWFlNiJ9.yW5q2POpsb9rkIZetl1omw",
                   additionalOptions: {
                     'accessToken': '$apikey',
                     'id': 'mapbox.mapbox-streets-v8'
                   }),
-                     PolylineLayerOptions(
+              PolylineLayerOptions(
                 polylines: [
                   Polyline(
                     points: ltjPath,
-                    color: Colors.blue,
-                    strokeWidth: 3.0,
-                  ),
-                  Polyline(
-                    points: ltmtjPath,
                     color: Colors.orange,
-                    strokeWidth: 5,
+                    strokeWidth: 3.0,
+                  ), Polyline(
+                    points: ltmtjPath,
+                    color: Colors.green,
+                    strokeWidth: 3.0,
                   ),
 
                 ],
@@ -213,191 +213,339 @@ class _ShowRouteState extends State<ShowRoute> {
               MarkerLayerOptions(
                 markers: [
                   Marker(
-                      width: 80.0,
-                      height: 80.0,
-                      point: points[0],
-                      builder: (ctx) {
-                        return Container(
-                          child: IconButton(
-                            icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                            color: Colors.orange,
-                            iconSize: 24.0,
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return Container(
-                                        color: Colors.white,
-                                        child: Column(
-                                          // mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
+                    width: 80.0,
+                    height: 80.0,
+                    point: points[0],
+                    builder: (ctx) {
+                      return Container(
+                        child: IconButton(
+                          icon: Icon(FontAwesomeIcons.mapMarkerAlt),
+                          color: Colors.red,
+                          iconSize: 30.0,
+                          onPressed: () {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return Container(
+                                      color: Colors.white,
+                                      child: Column(
+                                        // mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children: [
+                                          Card(
+                                            color: Colors.green,
+                                            child: Row(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                              MainAxisAlignment
+                                                  .spaceBetween,
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 30.0)),
                                                 Text(
-                                                  "Lagankhel Station",
+                                                  "Lagankhel",
                                                   style: TextStyle(
-                                                    fontSize: 23.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                                      fontSize: 23.0,
+                                                      fontWeight:
+                                                      FontWeight.bold,
+                                                      color: Colors.white),
                                                 ),
                                                 CircleAvatar(
+                                                    backgroundColor:
+                                                    Colors.white,
+                                                    foregroundColor:
+                                                    Colors.green,
                                                     child: Icon(
                                                         FontAwesomeIcons.car))
                                               ],
                                             ),
-                                            Divider(),
-                                            Center(
-                                                child:
-                                                    Text("Pass By Vehicles",style: TextStyle(
+                                          ),
+                                          Divider(),
+                                          Center(
+                                              child: Text(
+                                                "Pass By Vehicles",
+                                                style: TextStyle(
                                                   fontSize: 22.0,
-                                                  fontWeight: FontWeight.bold),)),
-                                           ListTile(
-                                              leading: Icon(FontAwesomeIcons.bus),
-                                              title: Text('1. Aanapurna Yatayat',style: TextStyle(
+                                                  color: Colors.green,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              )),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '1. Swyungta Yatayat',
+                                              style: TextStyle(
                                                   fontSize: 20.0,
-                                                  fontWeight: FontWeight.bold),),
-                                              onTap: () {
-                                                // Update the state of the app
-                                                // ...
-                                                // Then close the drawer
-                                                Navigator.pop(context);
-                                              },
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.green),
                                             ),
-                                            ListTile(
-                                              leading: Icon(FontAwesomeIcons.bus),
-                                              title: Text('2. Saja Yatayat',style: TextStyle(
-                                                  fontSize: 20.0,
-                                                  fontWeight: FontWeight.bold),),
-                                              onTap: () {
-                                                // Update the state of the app
-                                                // ...
-                                                // Then close the drawer
-                                                Navigator.pop(context);
-                                              },
-                                            ), ListTile(
-                                              leading: Icon(FontAwesomeIcons.bus),
-                                              title: Text('3. Micro/tampo',style: TextStyle(
-                                                  fontSize: 20.0,
-                                                  fontWeight: FontWeight.bold),),
-                                              onTap: () {
-                                                // Update the state of the app
-                                                // ...
-                                                // Then close the drawer
-                                                Navigator.pop(context);
-                                              },
+                                          ),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '2. Saja Yatayat',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
                                             ),
-                                          ],
-                                        ));
-                                  });
-                            },
-                          ),
-                        );
-                      }),
+                                          ),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '3. Swyambhu Yatayat',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ));
+                                });
+                          },
+                        ),
+                      );
+                    },
+                  ),
                   Marker(
-                      width: 80.0,
-                      height: 80.0,
-                      point: points[1],
-                      builder: (ctx) {
-                        return Container(
-                          child: IconButton(
-                            icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                            color: Colors.orange,
-                            iconSize: 24.0,
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return Container(
-                                        color: Colors.white,
-                                        child: Column(
-                                          // mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
+                    width: 80.0,
+                    height: 80.0,
+                    point: points[1],
+                    builder: (ctx) {
+                      return Container(
+                        child: IconButton(
+                          icon: Icon(FontAwesomeIcons.mapMarkerAlt),
+                          color: Colors.red,
+                          iconSize: 30.0,
+                          onPressed: () {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return Container(
+                                      color: Colors.white,
+                                      child: Column(
+                                        // mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children: [
+                                          Card(
+                                            color: Colors.green,
+                                            child: Row(
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
+                                              CrossAxisAlignment.center,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                              MainAxisAlignment
+                                                  .spaceBetween,
                                               children: [
                                                 Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 30.0)),
                                                 Text(
-                                                  "Jawlakhel Station",
+                                                  "Ratnapark",
                                                   style: TextStyle(
-                                                    fontSize: 23.0,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
+                                                      fontSize: 23.0,
+                                                      fontWeight:
+                                                      FontWeight.bold,
+                                                      color: Colors.white),
                                                 ),
                                                 CircleAvatar(
+                                                    backgroundColor:
+                                                    Colors.white,
+                                                    foregroundColor:
+                                                    Colors.green,
                                                     child: Icon(
                                                         FontAwesomeIcons.car))
                                               ],
                                             ),
-                                            Divider(),
-                                            Center(
-                                                child:
-                                                    Text("Pass By Vehicles",style: TextStyle(
+                                          ),
+                                          Divider(),
+                                          Center(
+                                              child: Text(
+                                                "Pass By Vehicles",
+                                                style: TextStyle(
                                                   fontSize: 22.0,
-                                                  fontWeight: FontWeight.bold),)),
-                                           ListTile(
-                                              leading: Icon(FontAwesomeIcons.bus),
-                                              title: Text('1. Aanapurna Yatayat',style: TextStyle(
+                                                  color: Colors.green,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              )),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '1. Saja Yatayat',
+                                              style: TextStyle(
                                                   fontSize: 20.0,
-                                                  fontWeight: FontWeight.bold),),
-                                              onTap: () {
-                                                // Update the state of the app
-                                                // ...
-                                                // Then close the drawer
-                                                Navigator.pop(context);
-                                              },
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.green),
                                             ),
-                                            ListTile(
-                                              leading: Icon(FontAwesomeIcons.bus),
-                                              title: Text('2. Nepal Yatayat',style: TextStyle(
-                                                  fontSize: 20.0,
-                                                  fontWeight: FontWeight.bold),),
-                                              onTap: () {
-                                                // Update the state of the app
-                                                // ...
-                                                // Then close the drawer
-                                                Navigator.pop(context);
-                                              },
-                                            ), ListTile(
-                                              leading: Icon(FontAwesomeIcons.bus),
-                                              title: Text('3. Saja Yatayat',style: TextStyle(
-                                                  fontSize: 20.0,
-                                                  fontWeight: FontWeight.bold),),
-                                              onTap: () {
-                                                // Update the state of the app
-                                                // ...
-                                                // Then close the drawer
-                                                Navigator.pop(context);
-                                              },
+                                          ),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '2. Nepal Yatayat',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
                                             ),
-                                          ],
-                                        ));
-                                  });
-                            },
-                          ),
-                        );
-                      }),
-
+                                          ),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '3. Micro Bus',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ));
+                                });
+                          },
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
-             
+            ],
+          ),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Card(
+                color: Colors.green,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(padding: EdgeInsets.only(left: 30.0)),
+                    Text(
+                      "Lagankhel <=> Jawlakhel",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 23.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    CircleAvatar(
+                      child: Icon(FontAwesomeIcons.car, color: Colors.green),
+                      backgroundColor: Colors.white,
+                    )
+                  ],
+                ),
+              ),
+              Card(
+                child: Center(
+                    child: Text(
+                      "Possible path",
+                      style: TextStyle(
+                          fontSize: 22.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
+                    )),
+              ),
+              Card(
+                child: ExpansionTile(
+                  leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
+                  title: Text(
+                    '1.Via Kumaripati ${distanceFromLagToJawlakhel().toInt()}m',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange),
+                  ),
+                  children: [
+
+                    Row(
+                      children: [
+
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Text(
+                          "1.Saja Yatayat",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green,
+                              fontSize: 16.0),
+                        ),
+                        Spacer(),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                            color: Colors.green),
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                            color: Colors.green),
+                      ],
+                    ),
+
+                  ],
+                ),
+              ),
+              Card(
+                child: ExpansionTile(
+                  leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
+                  title: Text(
+                    '2. Via Ekantakuna.${distanceFromLagToMahalaxmiToJawlakhel().toInt()}m',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green),
+                  ),
+                  children: [
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Text(
+                          "1.Swyambhu Yatayat",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green,
+                              fontSize: 16.0),
+                        ),
+                        Spacer(),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                            color: Colors.green),
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                            color: Colors.green),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Text(
+                          "2.Swyungta Yatayat",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green,
+                              fontSize: 16.0),
+                        ),
+                        Spacer(),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                            color: Colors.green),
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                            color: Colors.green),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
             ],
           ),
         ],

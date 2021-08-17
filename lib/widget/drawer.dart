@@ -1,3 +1,4 @@
+import 'package:route_finder_final/home.dart';
 import 'package:route_finder_final/ui/bus_park.dart';
 import 'package:route_finder_final/ui/vehicle_info.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,15 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.directions_transit ,color: Colors.green),
+            title: Text('Home'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
+            },
+          ),ListTile(
             leading: Icon(Icons.directions_transit ,color: Colors.green),
             title: Text('Vehicle route'),
             onTap: () {

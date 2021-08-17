@@ -746,7 +746,7 @@ class _KotToGongState extends State<KotToGong> {
                       return Container(
                         child: IconButton(
                           icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                          color: Colors.red,
+                          color: Colors.green,
                           iconSize: 30.0,
                           onPressed: () {
                             showModalBottomSheet(
@@ -872,7 +872,7 @@ class _KotToGongState extends State<KotToGong> {
                       return Container(
                         child: IconButton(
                           icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                          color: Colors.red,
+                          color: Colors.blue,
                           iconSize: 30.0,
                           onPressed: () {
                             showModalBottomSheet(
@@ -975,7 +975,7 @@ class _KotToGongState extends State<KotToGong> {
                       return Container(
                         child: IconButton(
                           icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                          color: Colors.red,
+                          color: Colors.green,
                           iconSize: 30.0,
                           onPressed: () {
                             showModalBottomSheet(
@@ -1098,7 +1098,7 @@ class _KotToGongState extends State<KotToGong> {
                   children: [
                     Padding(padding: EdgeInsets.only(left: 30.0)),
                     Text(
-                      "Koteshwor to Gongabu",
+                      "Koteshwor <=> Gongabu",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 23.0,
@@ -1126,7 +1126,7 @@ class _KotToGongState extends State<KotToGong> {
                 child: ExpansionTile(
                   leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
                   title: Text(
-                    '1. Direct  approx.${distanceFromKotToGongabu().toInt()}m',
+                    '1. Via Gausala ${distanceFromKotToGongabu().toInt()}m',
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
@@ -1176,11 +1176,11 @@ class _KotToGongState extends State<KotToGong> {
                 child: ExpansionTile(
                   leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
                   title: Text(
-                    '2.Indirect approx.${distanceFromKotToRatna().toInt() + distanceFromRatnaToGongabu().toInt()}m',
+                    '2. Via Ratnapark ${distanceFromKotToRatna().toInt() + distanceFromRatnaToGongabu().toInt()}m',
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.green),
+                        color: Colors.blue),
                   ),
                   children: [
                     ExpansionTile(
@@ -1188,7 +1188,7 @@ class _KotToGongState extends State<KotToGong> {
                         child: Text("Koteshwor to Ratnapark",style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.green),),
+                          color: Colors.blue),),
                       ),
                       children: [
    Row(
@@ -1235,7 +1235,7 @@ class _KotToGongState extends State<KotToGong> {
                         child: Text("Ratnapark to Gongabu",style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.green),),
+                          color: Colors.orange),),
                       ),
                       children: [
    Row(
