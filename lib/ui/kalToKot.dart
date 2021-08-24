@@ -1107,7 +1107,7 @@ class _KalToKotState extends State<KalToKot> {
               plugins: [
                 // TappablePolylineMapPlugin(),
               ],
-              center: LatLng(27.738037407409745, 85.34015754805284),
+              center: LatLng(27.690734,85.317190),
               zoom: 12.6,
               maxZoom: 18.0,
             ),
@@ -1138,7 +1138,8 @@ class _KalToKotState extends State<KalToKot> {
                   Marker(
                     width: 80.0,
                     height: 80.0,
-                    point: kalankiToKoteshworPath[0],
+                    point: kalankiToKoteshworPath[
+                    kalankiToKoteshworPath.length - 1],
                     builder: (ctx) {
                       return Container(
                         child: IconButton(
@@ -1266,8 +1267,7 @@ class _KalToKotState extends State<KalToKot> {
                   Marker(
                     width: 80.0,
                     height: 80.0,
-                    point: kalankiToKoteshworPath[
-                        kalankiToKoteshworPath.length - 1],
+                    point: kalankiToKoteshworPath[0],
                     builder: (ctx) {
                       return Container(
                         child: IconButton(
@@ -1298,7 +1298,7 @@ class _KalToKotState extends State<KalToKot> {
                                                     padding: EdgeInsets.only(
                                                         left: 30.0)),
                                                 Text(
-                                                  "Ratnapark",
+                                                  "Kalanki",
                                                   style: TextStyle(
                                                       fontSize: 23.0,
                                                       fontWeight:
@@ -1329,7 +1329,7 @@ class _KalToKotState extends State<KalToKot> {
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
-                                              '1. Saja Yatayat',
+                                              '1. Aanapurna Yatayat',
                                               style: TextStyle(
                                                   fontSize: 20.0,
                                                   fontWeight: FontWeight.bold,
@@ -1347,12 +1347,22 @@ class _KalToKotState extends State<KalToKot> {
                                                 color: Colors.green,
                                               ),
                                             ),
-                                          ),
-                                          ListTile(
+                                          ),ListTile(
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
-                                              '3. Micro Bus',
+                                              '3.Mahanagar Yatayat',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ),ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '4.Mayur Yatayat',
                                               style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -1384,7 +1394,7 @@ class _KalToKotState extends State<KalToKot> {
                   children: [
                     Padding(padding: EdgeInsets.only(left: 30.0)),
                     Text(
-                      "Kalanki to Koteshwor",
+                      "Kalanki <=> Koteshwor",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 23.0,
@@ -1412,7 +1422,48 @@ class _KalToKotState extends State<KalToKot> {
                 child: ExpansionTile(
                   leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
                   title: Text(
-                    '1. Direct  approx.${distanceFromKalToKot().toInt()}m',
+                    '1.Via Tripureshwor ${distanceFromKalToBalkhuToKot().toInt()}m',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange),
+                  ),
+                  children: [
+                    Text(
+                      "Note: shortest path but less vehicle.",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.red,
+                          fontSize: 16.0),
+                    ),
+                    Row(
+                      children: [
+
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Text(
+                          "1.Nepal Yatayat",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green,
+                              fontSize: 16.0),
+                        ),
+                        Spacer(),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                            color: Colors.green),
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                            color: Colors.green),
+                      ],
+                    ),
+
+                  ],
+                ),
+              ),
+              Card(
+                child: ExpansionTile(
+                  leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
+                  title: Text(
+                    '2. Via Ring Road ${distanceFromKalToKot().toInt()}m',
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
@@ -1458,47 +1509,7 @@ class _KalToKotState extends State<KalToKot> {
                   ],
                 ),
               ),
-              Card(
-                child: ExpansionTile(
-                  leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
-                  title: Text(
-                    '2.Alternative way ${distanceFromKalToBalkhuToKot().toInt()}m',
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.orange),
-                  ),
-                  children: [
-                    Text(
-                      "Note: shortest path but less vehicle.",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: Colors.red,
-                          fontSize: 16.0),
-                    ),
-                    Row(
-                      children: [
 
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Text(
-                          "1.Nepal Yatayat",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              color: Colors.green,
-                              fontSize: 16.0),
-                        ),
-                        Spacer(),
-                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
-                            color: Colors.green),
-                        Padding(padding: EdgeInsets.only(left: 20)),
-                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
-                            color: Colors.green),
-                      ],
-                    ),
-
-                  ],
-                ),
-              ),
 
             ],
           ),

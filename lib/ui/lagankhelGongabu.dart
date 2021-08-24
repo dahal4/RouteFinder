@@ -2452,7 +2452,7 @@ class _LagToGongState extends State<LagToGong> {
                                                     padding: EdgeInsets.only(
                                                         left: 30.0)),
                                                 Text(
-                                                  "Ratnapark",
+                                                  "Gongabu",
                                                   style: TextStyle(
                                                       fontSize: 23.0,
                                                       fontWeight:
@@ -2483,7 +2483,7 @@ class _LagToGongState extends State<LagToGong> {
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
-                                              '1. Saja Yatayat',
+                                              '1. Mahanagar Yatayat',
                                               style: TextStyle(
                                                   fontSize: 20.0,
                                                   fontWeight: FontWeight.bold,
@@ -2494,7 +2494,7 @@ class _LagToGongState extends State<LagToGong> {
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
-                                              '2. Nepal Yatayat',
+                                              '2. Aanapurna Yatayat',
                                               style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -2506,7 +2506,19 @@ class _LagToGongState extends State<LagToGong> {
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
-                                              '3. Micro Bus',
+                                              '3. Mayur Yatayat',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ),
+                                          ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '4. Nepal Yatayat',
                                               style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -2657,7 +2669,7 @@ class _LagToGongState extends State<LagToGong> {
                 child: ExpansionTile(
                   leading: Icon(FontAwesomeIcons.bus, color: Colors.green),
                   title: Text(
-                    '1. Via Koteshwor.${distanceFromLagToGongabu().toInt()}m',
+                    '3. Via Koteshwor.${distanceFromLagToGongabu().toInt()}m',
                     style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,

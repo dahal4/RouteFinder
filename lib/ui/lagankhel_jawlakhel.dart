@@ -1,3 +1,4 @@
+import 'package:route_finder_final/home.dart';
 import 'package:route_finder_final/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -350,7 +351,7 @@ class _LagJawlState extends State<LagJawl> {
                                                     padding: EdgeInsets.only(
                                                         left: 30.0)),
                                                 Text(
-                                                  "Ratnapark",
+                                                  "Jawlakhel",
                                                   style: TextStyle(
                                                       fontSize: 23.0,
                                                       fontWeight:
@@ -404,7 +405,18 @@ class _LagJawlState extends State<LagJawl> {
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
-                                              '3. Micro Bus',
+                                              '3. Annapurna Yatayat',
+                                              style: TextStyle(
+                                                fontSize: 20.0,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green,
+                                              ),
+                                            ),
+                                          ), ListTile(
+                                            leading: Icon(FontAwesomeIcons.bus,
+                                                color: Colors.green),
+                                            title: Text(
+                                              '4. Micro Bus',
                                               style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -491,6 +503,25 @@ class _LagJawlState extends State<LagJawl> {
                             color: Colors.green),
                       ],
                     ),
+                    Row(
+                      children: [
+
+                        Padding(padding: EdgeInsets.only(left: 80)),
+                        Text(
+                          "2.Micro bus",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green,
+                              fontSize: 16.0),
+                        ),
+                        Spacer(),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                            color: Colors.green),
+                        Padding(padding: EdgeInsets.only(left: 20)),
+                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                            color: Colors.green),
+                      ],
+                    ),
 
                   ],
                 ),
@@ -506,42 +537,154 @@ class _LagJawlState extends State<LagJawl> {
                         color: Colors.green),
                   ),
                   children: [
-                    Row(
+                    ExpansionTile(
+                      title: Center(
+                        child: Text("Lagankhel to Ekantakuna",style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue),),
+                      ),
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Text(
-                          "1.Swyambhu Yatayat",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              color: Colors.green,
-                              fontSize: 16.0),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "1.Swyungta Yatayat",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleUp,
+                                color: Colors.green),
+                          ],
                         ),
-                        Spacer(),
-                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
-                            color: Colors.green),
-                        Padding(padding: EdgeInsets.only(left: 20)),
-                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
-                            color: Colors.green),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "2.Swyambhu Yatayat",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleUp,
+                                color: Colors.green),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "3.Dakshinkali Yatayat",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleUp,
+                                color: Colors.green),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "4. Micros/Tampo",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                                color: Colors.green),
+                          ],
+                        ),
+
                       ],
                     ),
-                    Row(
+                    ExpansionTile(
+                      title: Center(
+                        child: Text("Ekantakuna to Jawlakhel",style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.orange),),
+                      ),
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 80)),
-                        Text(
-                          "2.Swyungta Yatayat",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              color: Colors.green,
-                              fontSize: 16.0),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "1.Nepal Yatayat",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                                color: Colors.green),
+                          ],
+                        ), Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "2.Annapurna Yatayat",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                                color: Colors.green),
+                          ],
                         ),
-                        Spacer(),
-                        Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
-                            color: Colors.green),
-                        Padding(padding: EdgeInsets.only(left: 20)),
-                        Icon(FontAwesomeIcons.solidArrowAltCircleRight,
-                            color: Colors.green),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 80)),
+                            Text(
+                              "3. Micros/Tampo",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                  fontSize: 16.0),
+                            ),
+                            Spacer(),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleLeft,
+                                color: Colors.green),
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(FontAwesomeIcons.solidArrowAltCircleRight,
+                                color: Colors.green),
+                          ],
+                        ),
+
                       ],
                     ),
+
                   ],
                 ),
               ),

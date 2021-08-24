@@ -1050,7 +1050,8 @@ class _KotToGongState extends State<KotToGong> {
                                                 color: Colors.green,
                                               ),
                                             ),
-                                          ),ListTile(
+                                          ),
+                                          ListTile(
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(
@@ -1061,7 +1062,8 @@ class _KotToGongState extends State<KotToGong> {
                                                 color: Colors.green,
                                               ),
                                             ),
-                                          ),ListTile(
+                                          ),
+                                          ListTile(
                                             leading: Icon(FontAwesomeIcons.bus,
                                                 color: Colors.green),
                                             title: Text(

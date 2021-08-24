@@ -133,6 +133,29 @@ class BusPark extends StatelessWidget {
                                             ),
                                           ),
                                         ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3.Mahanagar Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '4.Swyambhu Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ));
                               });
@@ -220,6 +243,28 @@ class BusPark extends StatelessWidget {
                                               color: Colors.green,
                                             ),
                                           ),
+                                        ),ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3.Mahanagar Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '4.Mayur Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
                                         ),
                                       ],
                                     ));
@@ -290,7 +335,7 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '1. Aanapurna Yatayat',
+                                            '1. Saja Yatayat',
                                             style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -302,6 +347,18 @@ class BusPark extends StatelessWidget {
                                               color: Colors.green),
                                           title: Text(
                                             '2. Nepal Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Micro bus',
                                             style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold,
@@ -378,7 +435,7 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '1. Aanapurna Yatayat',
+                                            '1. Mahanagar Yatayat',
                                             style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -389,7 +446,31 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '2. Nepal Yatayat',
+                                            '2. Aanapurna Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Mayur Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '4. Nepal Yatayat',
                                             style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold,
@@ -485,6 +566,40 @@ class BusPark extends StatelessWidget {
                                             ),
                                           ),
                                         ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Gokarnashwor Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ), ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '4. Mahanagar Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '5. Mayur Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ));
                               });
@@ -554,7 +669,7 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '1. Aanapurna Yatayat',
+                                            '1. Saja Yatayat',
                                             style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -566,6 +681,29 @@ class BusPark extends StatelessWidget {
                                               color: Colors.green),
                                           title: Text(
                                             '2. Nepal Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Annapurna Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ), ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '4. Micro Bus',
                                             style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold,
@@ -642,7 +780,7 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '1. Aanapurna Yatayat',
+                                            '1. Swyungta Yatayat',
                                             style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -653,7 +791,19 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '2. Nepal Yatayat',
+                                            '2. Saja Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Swyambhu Yatayat',
                                             style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold,
@@ -730,7 +880,7 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '1. Aanapurna Yatayat',
+                                            '1. Nepal Yatayat',
                                             style: TextStyle(
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.bold,
@@ -741,7 +891,18 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '2. Nepal Yatayat',
+                                            '2. Saja Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ), ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Micro/tampo',
                                             style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold,
@@ -818,18 +979,29 @@ class BusPark extends StatelessWidget {
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '1. Aanapurna Yatayat',
+                                            '1. Gokarnashwor Yatayat',
                                             style: TextStyle(
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green),
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
                                           ),
-                                        ),
-                                        ListTile(
+                                        ), ListTile(
                                           leading: Icon(FontAwesomeIcons.bus,
                                               color: Colors.green),
                                           title: Text(
-                                            '2. Nepal Yatayat',
+                                            '2. Mahanagar Yatayat',
+                                            style: TextStyle(
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.green,
+                                            ),
+                                          ),
+                                        ),ListTile(
+                                          leading: Icon(FontAwesomeIcons.bus,
+                                              color: Colors.green),
+                                          title: Text(
+                                            '3. Swyungta Yatayat',
                                             style: TextStyle(
                                               fontSize: 20.0,
                                               fontWeight: FontWeight.bold,
